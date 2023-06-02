@@ -10,6 +10,7 @@ import com.example.automation.Models.Selenium;
 import com.example.automation.Service.SeleniumService;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 public class SeleniumController {
     @Autowired
     private final SeleniumService service;
