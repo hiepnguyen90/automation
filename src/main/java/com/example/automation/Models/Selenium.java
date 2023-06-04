@@ -19,7 +19,6 @@ public class Selenium {
 
     private String thenStatement;
 
-    
     public Long getId() {
         return id;
     }
