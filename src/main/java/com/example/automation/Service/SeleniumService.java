@@ -1,5 +1,7 @@
 package com.example.automation.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,4 +17,7 @@ public class SeleniumService {
         return repository.save(selenium);
     }
     
+    public List<Selenium> findAll(){
+        return (List <Selenium>) repository.findAll();
+    }
 }

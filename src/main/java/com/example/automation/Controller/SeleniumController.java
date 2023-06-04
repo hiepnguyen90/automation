@@ -1,6 +1,8 @@
 package com.example.automation.Controller;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +25,11 @@ public class SeleniumController {
     public ResponseEntity<Selenium> createSelenium(@RequestBody Selenium s){
         Selenium selenium = service.save(s);
         return new ResponseEntity<>(selenium, HttpStatus.CREATED);       
+    }
+
+    @GetMapping("/admin")
+    public ResponseEntity<List<Selenium>> findAllEntries(){
+        return new ResponseEntity<>(service.findAll(), HttpStatus.OK);
     }
     
 }

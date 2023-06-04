@@ -9,6 +9,8 @@ public class Selenium {
     @Id
     private Long id;
 
+    private String feature;
+
     private String scenario;
 
     private String given;
@@ -17,6 +19,7 @@ public class Selenium {
 
     private String thenStatement;
 
+    
     public Long getId() {
         return id;
     }
@@ -55,6 +58,14 @@ public class Selenium {
 
     public void setThenStatement(String thenStatement) {
         this.thenStatement = thenStatement;
+    }
+
+    public String getFeature() {
+        return feature;
+    }
+
+    public void setFeature(String feature) {
+        this.feature = feature;
     };
 
 }
