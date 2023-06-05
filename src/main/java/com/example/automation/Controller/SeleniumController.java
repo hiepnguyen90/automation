@@ -2,6 +2,7 @@ package com.example.automation.Controller;
 
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -31,5 +32,15 @@ public class SeleniumController {
     public ResponseEntity<List<Selenium>> findAllEntries(){
         return new ResponseEntity<>(service.findAll(), HttpStatus.OK);
     }
-    
+
+    @GetMapping("/admin/{id}")
+    public ResponseEntity<Optional<Selenium>> getSelenium(@PathVariable("id") Long id){ 
+        return new ResponseEntity<>(service.findById(id), HttpStatus.OK);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> deleteSelenium(@PathVariable("id") Long id){
+        service.deleteById(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
 }
